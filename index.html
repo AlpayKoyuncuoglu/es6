@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // function selam() {
+        //     console.log("say hi");
+        // }
+        var selamlamaES5 = function (isim) {
+            console.log("slm " + isim);
+        }
+
+        // selamlamaES5("alpay");
+
+        //burada parantez kullanılmadığında sadece tek satır kullanılması gerenkmektedir
+        const selamlamaES6 = (isim) => console.log("es6 selamlama: " + isim);
+
+        // selamlamaES6("zpc");
+
+
+        var sumES5 = function (a, b) {
+            return a + b;
+        }
+
+        sumES5(23, 14);
+        console.log(sumES5(23, 14));
+
+
+        const toplamES6 = (a, b) => a + b;
+        console.log(toplamES6(22, 22));
+
+
+    </script>
+</body>
+
+</html>
