@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const msj = ["benim", "adım", "zpc"]
+
+        let sonuc = "";
+        for (let x of msj) {
+            sonuc += x + " ";
+        }
+        // yukarıdaki döngüde yapılan işlemler, sadece spread operatör alt satırda gerçekleştirilmiştir
+
+        // console.log(...msj);
+
+        const dizi1 = ["bir", "iki"];
+        const dizi2 = ["üç", "dört"];
+        let dizi3 = [dizi1, dizi2];//burada dizi3 alt elemanları 2 dizi elemanı içeren bir dizidir
+        dizi3 = [...dizi1, ...dizi2];//ancak burada dizi3 dizi1 ve dizi2 nin elamanlarını içeren tek bir diziye dönüşmüştür
+        // console.log(dizi3);
+
+        // **************************************************************
+        const sayilar1 = [1, 2, 3];
+        const sayilar2 = sayilar1;
+        //burada sayilar1 dizisinin sayilar2'ye referans değeri atandığı için;
+        //sayilar1 dizisinin 0. indisinde yapılan değişiklik sonucu sayilar2 dizisinin de 0. indis değeri değişecektir
+
+        sayilar1[0] = 10;
+        // console.log(sayilar1, sayilar2);
+
+        // sadece değerler koplayanmak istendiğinde spread operatörü kullanlabilir
+
+        const user = {
+            username: "sadikturan",
+            email: "info@gmail.com"
+        }
+
+        const address = {
+            username: "deneme",
+            city: "kocaeli"
+        }
+        // console.log({ ...user, ...address });//spread operatörü ile burada 2 obje tek bir obje gibi gösterilmiştir
+        //2 obje de username değerine sahip olduğundan alttaki üsttekini ezer
+
+        function toplam(...x) {
+            let sonuc = 0;
+
+            for (let sayi of x)
+                sonuc += sayi
+
+            console.log(sonuc);
+
+        }
+        toplam(1, 2, 3);
+        toplam(1, 2, 3, 3);
+        //her toplam değeri için ayrı bir fonksiyon yazılmadı, yularıda gelen değerler spread operatörü ile karşılandı
+
+
+        function bilgileriGoster(isim, soyad, ...adres) {
+            console.log(isim, soyad, adres);
+        }
+
+        bilgileriGoster("ali", "turan", "istanbul", "kadıköy");
+        //isim soyad değerleri karşılıklarını bulacaktır ancak adres burada 2 elemanlı bir dizi haline gelecektir
+
+
+    </script>
+
+</body>
+
+</html>
